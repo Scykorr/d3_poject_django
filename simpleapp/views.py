@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import datetime
 
@@ -6,6 +7,7 @@ import datetime
 from django.views.generic import ListView, DetailView
 from .models import Product
 from .filters import ProductFilter
+from .forms import ProductForm
 
 
 class ProductsList(ListView):
@@ -62,8 +64,11 @@ class ProductDetail(DetailView):
 
 
 def create_product(request):
+    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/products/')
 
-    return render(request, template_name='products.html')
-
-
-
+    return render(request, 'product_edit.html', {'form': form})
