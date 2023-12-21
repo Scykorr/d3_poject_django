@@ -150,10 +150,10 @@ ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'fedos.py@ya.ru'
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = True
-Email_USE_SSL = True
+EMAIL_HOST_USER = 'fedos.py'
+EMAIL_HOST_PASSWORD = 'bzxvzysphqyhkjkz'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
-default_from_email = 'fedos.py@ya.ru'
+DEFAULT_FROM_EMAIL = 'fedos.py@yandex.ru'
 
